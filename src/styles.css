@@ -57,7 +57,7 @@ h1 {
 p {
   font-size: 1.5rem;
 }
-
+/* 
 .svg {
   width: 25px;
 }
@@ -86,7 +86,6 @@ p {
 .hero {
   flex: 1;
   height: 100%;
-  background-image: url(./images/restaurant-home-img.jpeg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -285,4 +284,4 @@ p {
 
 .contact .contact__reservation .contact__cta .contact__cta_secondary:hover {
   background-color: var(--accent);
-}
+} */
