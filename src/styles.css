@@ -75,6 +75,18 @@ p {
   color: var(--primary-color);
   border-radius: 8px;
 }
+
+.sub-heading,
+.sub-title,
+.sub-text {
+  color: var(--secondary-color);
+}
+
+.title,
+.sub-title {
+  font-weight: 700;
+  color: var(--primary-color);
+}
 /* 
 .svg {
   width: 25px;
