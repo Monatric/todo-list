@@ -8,22 +8,23 @@ Set up the styles that would be used repeatedly
 
 - [ ] Font style
 - [ ] Colors
-  - [ ] Background
-    - [ ] Primary bg #fff
-    - [ ] Secondary bg #f1eaea
-    - [ ] Tertiary bg #ffd6d7
-  - [ ] Buttons
-    - [ ] Primary btn #ff4c50
-    - [ ] Secondary btn #f1eaea
-  - [ ] Accent #b3261e
-  - [ ] Mute #F6F6F6
-  - [ ] Text
-    - [ ] Primary txt #1e1e1e
-    - [ ] Secondary txt #757575
-- [ ] Title (h1) 32px
-- [ ] Heading (h2) 24px
-- [ ] Subheading (h3) 20px
-- [ ] Base (p) 16px
+  - [x] Background
+    - [x] Primary bg #fff
+    - [x] Secondary bg #f1eaea
+    - [x] Tertiary bg #ffd6d7
+  - [x] Buttons
+    - [x] Primary btn #ff4c50
+    - [x] Secondary btn #f1eaea
+  - [x] Accent #b3261e
+  - [x] Mute #F6F6F6
+  - [x] Text
+    - [x] Primary txt #1e1e1e
+    - [x] Secondary txt #757575
+- [x] Title (h1) 32px
+- [x] Heading (h2) 24px
+- [x] Subheading (h3) 20px
+- [x] Base (p) 16px
+- [x] Button styles
 
 Set out the static structure
 
