@@ -106,6 +106,16 @@ img[alt="Plus svg"]:hover {
   border-radius: 8px;
 }
 
+img[alt="Dot menu"] {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+img[alt="Dot menu"]:hover {
+  background-color: var(--hover-item);
+  border-radius: 8px;
+}
+
 .svg {
   width: 20px;
   height: 20px;
