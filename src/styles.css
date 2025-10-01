@@ -43,7 +43,7 @@ button {
 
 header {
   background-color: var(--primary-bg);
-  padding: 1rem;
+  padding: 1rem 2rem;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   grid-column-start: 2;
   grid-column-end: 3;
@@ -79,6 +79,15 @@ nav {
   width: 100%;
   gap: 1rem;
   display: flex;
+}
+
+.card {
+  background-color: var(--primary-bg);
+  border-radius: 8px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -162,11 +171,58 @@ img[alt="Dot menu"]:hover {
   background-color: var(--tertiary-bg);
 }
 
-.project__heading {
+.sidebar .project__heading {
   display: flex;
   justify-content: space-between;
   margin: 1rem 0;
   padding: 0 0.5rem;
+}
+
+/* main */
+
+main {
+  padding: 1rem;
+}
+
+section.project {
+  margin-bottom: 1rem;
+}
+
+.content .project__heading {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0;
+  align-items: center;
+}
+
+.content .project .project__tasks {
+  padding: 0.5rem 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.content .project .project__tasks:hover {
+  background-color: var(--hover-item);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.content .project .project__tasks.active {
+  background-color: var(--tertiary-bg);
+}
+
+.task__add {
+  padding: 0.5rem 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.task__add:hover {
+  background-color: var(--hover-item);
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 /* 
