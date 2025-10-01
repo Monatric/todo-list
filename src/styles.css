@@ -61,11 +61,24 @@ sidebar {
 
 .sidebar__title {
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 nav {
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
+}
+
+.sidebar .nav .nav__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .nav .nav__list .nav__item {
+  width: 100%;
+  gap: 1rem;
+  display: flex;
 }
 
 h1 {
@@ -82,6 +95,15 @@ h3 {
 
 p {
   font-size: 1rem;
+}
+
+img[alt="Plus svg"] {
+  cursor: pointer;
+}
+
+img[alt="Plus svg"]:hover {
+  background-color: var(--hover-item);
+  border-radius: 8px;
 }
 
 .svg {
@@ -117,9 +139,9 @@ p {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 0.5rem;
-  margin: 1rem 0;
   cursor: pointer;
   border-radius: 8px;
+  width: 100%;
 }
 
 .item:hover {
@@ -128,6 +150,13 @@ p {
 
 .item.active {
   background-color: var(--tertiary-bg);
+}
+
+.project__heading {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 0 0.5rem;
 }
 
 /* 

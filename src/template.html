@@ -13,15 +13,28 @@
     </header>
     <sidebar class="sidebar">
       <h1 class="sidebar__title title">Todo List</h1>
-      <div class="sidebar__item item active">
-        <img src="./icons/file.svg" alt="File svg" class="svg" />
-        <p>All tasks</p>
-      </div>
       <nav class="nav">
         <ul class="nav__list">
-          <li class="nav__item">All</li>
-          <li class="nav__item">Active</li>
-          <li class="nav__item">Completed</li>
+          <li class="nav__item">
+            <div class="sidebar__item item active">
+              <img src="./icons/file.svg" alt="File svg" class="svg" />
+              <p>All tasks</p>
+            </div>
+          </li>
+        </ul>
+        <div class="project__heading">
+          <h3 class="sub-heading">My Projects</h3>
+          <img src="./icons/plus.svg" alt="Plus svg" class="svg" />
+        </div>
+        <ul class="nav__list">
+          <li class="nav__item item">
+            <img src="./icons/hash.svg" alt="Hash svg" class="svg" />
+            <p>Project 1</p>
+          </li>
+          <li class="nav__item item">
+            <img src="./icons/hash.svg" alt="Hash svg" class="svg" />
+            <p>Project 2</p>
+          </li>
         </ul>
       </nav>
     </sidebar>
