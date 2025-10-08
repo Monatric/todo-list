@@ -255,19 +255,19 @@ section.project {
 
 /* selected project task */
 
-#selected-project-task .main_task {
+#selected-project-task .project__task {
   display: flex;
   gap: 1rem;
   margin: 1rem 0;
   flex-direction: column;
 }
 
-.main_task .project__task_title {
+.project__task .project__task_title {
   display: flex;
   gap: 1rem;
 }
 
-.main_task .main_task_details {
+.project__task .project__task_details {
   display: flex;
   gap: 1rem;
   align-items: center;
