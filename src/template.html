@@ -77,11 +77,28 @@
       </div>
       <div class="card" id="selected-project-task">
         <p class="sub-text">Project 1</p>
-        <div class="main-task">
-          <input type="checkbox" name="" id="" />
-            <div class="project__task_title">
-              <h3 class="title">Do laundry</h3>
+        <div class="main_task">
+          <div class="project__task_title">
+            <input type="checkbox" name="" id="" />
+            <p class="title">Do laundry</p>
+          </div>
+          <div class="main_task_details">
+            <div class="main_task_date due-date-picker">
+              <label for="start">Due:</label>
+              <input
+                type="date"
+                id="start"
+                name="trip-start"
+                value="2018-07-22"
+                min="2018-01-01"
+                max="2018-12-31"
+              />
             </div>
+            <div class="main_task_priority priority-btn">
+              <img src="./icons/flag-high.svg" alt="Priority svg" class="svg" />
+              <p>High</p>
+            </div>
+          </div>
         </div>
       </div>
     </main>
