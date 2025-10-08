@@ -202,6 +202,39 @@ img[alt="Dot menu"]:hover {
   background-color: var(--hover-item);
 }
 
+.project__task_subtasks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.project__task_subtask {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #1e1e1e;
+}
+
+.project__task_subtask:hover {
+  background-color: var(--hover-item);
+}
+
+.subtask__add {
+  padding: 0.5rem 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.subtask__add:hover {
+  background-color: var(--hover-item);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 /* main */
 
 main {
@@ -260,6 +293,7 @@ section.project {
   gap: 1rem;
   margin: 1rem 0;
   flex-direction: column;
+  padding: 0 1rem;
 }
 
 .project__task .project__task_title {
@@ -271,6 +305,12 @@ section.project {
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.project__task .project__task_description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 /* 
