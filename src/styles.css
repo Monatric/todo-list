@@ -88,6 +88,8 @@ nav {
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  flex: 1;
 }
 
 h1 {
@@ -182,6 +184,9 @@ img[alt="Dot menu"]:hover {
 
 main {
   padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 section.project {
@@ -201,6 +206,7 @@ section.project {
   gap: 1rem;
   align-items: baseline;
   margin-bottom: 0.5rem;
+  border-radius: 8px;
 }
 
 .content .project .project__tasks:hover {
@@ -223,6 +229,15 @@ section.project {
   background-color: var(--hover-item);
   border-radius: 8px;
   cursor: pointer;
+}
+
+/* selected project task */
+
+#selected-project-task  .main-task {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
 /* 
