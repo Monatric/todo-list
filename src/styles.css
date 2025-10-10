@@ -235,6 +235,17 @@ img[alt="Dot menu"]:hover {
   cursor: pointer;
 }
 
+dialog {
+  margin: auto;
+  padding: 1rem;
+}
+
+dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 /* main */
 
 main {

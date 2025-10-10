@@ -24,7 +24,12 @@
         <div class="project__list">
           <div class="project__heading">
             <h3 class="sub-heading">My Projects</h3>
-            <img src="./icons/plus.svg" alt="Plus svg" class="svg" />
+            <img
+              src="./icons/plus.svg"
+              alt="Plus svg"
+              class="svg"
+              id="add-project"
+            />
           </div>
           <ul class="nav__list">
             <li class="nav__item item">
@@ -126,18 +131,28 @@
       </div>
     </main>
     <!-- dialog for adding new project -->
-    <dialog id="project-dialog" class="dialog">
-      <form method="dialog" class="dialog__form">
+    <dialog id="project-dialog" class="dialog" closedby="any">
+      <form id="project-form">
         <h2 class="sub-title">Add Project</h2>
         <input
           type="text"
           class="dialog__input"
           placeholder="Project Name"
+          name="project-name"
           required
+          autofocus
         />
         <div class="dialog__buttons">
-          <button class="btn--secondary">Cancel</button>
-          <button class="btn--primary" type="submit">Add</button>
+          <button
+            class="btn--secondary"
+            formmethod="dialog"
+            value="Cancel"
+            id="cancel-btn"
+            type="button"
+          >
+            Cancel
+          </button>
+          <button class="btn--primary" id="confirm-btn">Add</button>
         </div>
       </form>
     </dialog>
