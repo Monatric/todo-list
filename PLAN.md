@@ -37,3 +37,17 @@ Sidebar's static contents
 
 - [ ] All tasks btn
 - [ ] My Projects section with + for adding projects
+
+### Build out core functionalities of Todo List
+
+#### Adding projects
+
+Design:
+
+1. When the + btn is clicked, a new `nav__item` under `nav__list` under `project__list` should appear
+1. A dialog should appear
+   - Title
+   - Cancel
+   - Confirm
+
+Implementation:
