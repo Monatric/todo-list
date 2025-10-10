@@ -1,4 +1,6 @@
 import "./styles.css";
+import addProject from "./components/projectList";
+
 // // import { Home } from "./modules/home";
 // // import { Menu } from "./modules/menu";
 // // import { Contact } from "./modules/contact";
