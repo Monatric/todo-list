@@ -51,3 +51,9 @@ Design:
    - Confirm
 
 Implementation:
+The localStorage would have a key `projectList`, convertable to JSON so items can be nested. This way, we can populate
+project lists with the names that was entered for creating a new project. This prevents having to create a new key for
+each new project.
+
+Project Item creation is separated on its own file. Project List would use this instead. This keeps the data one way and
+the source of truth is clear.
