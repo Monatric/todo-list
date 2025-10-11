@@ -1,12 +1,12 @@
 import projectItem from "./projectItem.js";
 
-const addProject = document.getElementById("add-project");
-const projectDialog = document.getElementById("project-dialog");
-const confirmBtn = document.querySelector("#project-dialog #confirm-btn");
-const cancelBtn = document.querySelector("#project-dialog #cancel-btn");
-const projectForm = document.querySelector("#project-form");
-
 const projectList = () => {
+  const addProject = document.getElementById("add-project");
+  const projectDialog = document.getElementById("project-dialog");
+  const confirmBtn = document.querySelector("#project-dialog #confirm-btn");
+  const cancelBtn = document.querySelector("#project-dialog #cancel-btn");
+  const projectForm = document.querySelector("#project-form");
+
   addProject.addEventListener("click", () => {
     projectDialog.showModal();
   });
