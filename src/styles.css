@@ -173,7 +173,7 @@ img[alt="Dot menu"]:hover {
   background-color: var(--tertiary-bg);
 }
 
-.item:has(img[alt="Dot menu"]:hover) {
+.item:has(> :hover) {
   background-color: initial;
 }
 
