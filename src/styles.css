@@ -173,6 +173,10 @@ img[alt="Dot menu"]:hover {
   background-color: var(--tertiary-bg);
 }
 
+.item:has(img[alt="Dot menu"]:hover) {
+  background-color: initial;
+}
+
 .sidebar .project__heading {
   display: flex;
   justify-content: space-between;
