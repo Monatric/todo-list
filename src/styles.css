@@ -250,6 +250,36 @@ dialog form {
   gap: 1rem;
 }
 
+.dot_menu__container {
+  margin-left: auto;
+  position: relative;
+}
+
+.project__menu {
+  background-color: var(--primary-bg);
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 20px;
+  z-index: 999;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.project__menu ul > li {
+  padding: 1rem;
+}
+
+.project__menu ul > li:hover {
+  background-color: var(--hover-item);
+}
+
+.show {
+  display: block;
+}
+
 /* main */
 
 main {
