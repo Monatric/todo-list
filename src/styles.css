@@ -257,11 +257,8 @@ dialog form {
 
 .project__menu {
   background-color: var(--primary-bg);
-  display: flex;
-  gap: 1rem;
+  display: none;
   position: absolute;
-  justify-content: center;
-  align-items: center;
   left: 0;
   top: 20px;
   z-index: 999;
