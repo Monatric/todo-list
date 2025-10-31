@@ -57,3 +57,7 @@ each new project.
 
 Project Item creation is separated on its own file. Project List would use this instead. This keeps the data one way and
 the source of truth is clear.
+
+## Nits
+
+- Project item menu doesn't disappear upon clicking outside. It's so difficult to solve
