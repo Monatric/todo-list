@@ -58,6 +58,14 @@ each new project.
 Project Item creation is separated on its own file. Project List would use this instead. This keeps the data one way and
 the source of truth is clear.
 
+#### Editing/Deleting projects
+
+We can make this simple. Show the same dialog as before when adding the projects, and clicking delete will simply use the JS prompt "Are you sure?"
+
+1. When the menu icon is clicked, and Edit, the dialog should appear
+1. When the menu icon is clicked, and Delete, the JS prompt should appear
+
 ## Nits
 
-- Project item menu doesn't disappear upon clicking outside. It's so difficult to solve
+1. Project item menu doesn't disappear upon clicking outside. It's so difficult to solve
+1. Duplicate dialog HTML for Create and Update operations for project item. I can DRY this up but it's going to take a while and complicated for the purpose of this project I suppose. For now, I'll just keep it simple. However, my idea to solve this is lift the state up? So I'll add an event listener in the parent, projectList.js, and listen for which button was click, and then slightly modify the dialog dynamically.
