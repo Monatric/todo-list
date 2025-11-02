@@ -5,10 +5,13 @@ import menuContainer from "./projectItemMenu.js";
 const navItemFragment = document.createDocumentFragment();
 
 const projectItem = (function () {
-  const create = (projectItemName) => {
+  const projectList = JSON.parse(localStorage.getItem("projectList"));
+
+  const create = (project) => {
+    const newMenuContainer = menuContainer.create();
     const listItem = document.createElement("li");
     listItem.classList.add("nav__item", "item");
-    listItem.dataset.id = crypto.randomUUID();
+    listItem.dataset.id = project.id ? project.id : crypto.randomUUID();
 
     const hashIconImg = document.createElement("img");
     hashIconImg.src = hashIcon;
@@ -25,13 +28,14 @@ const projectItem = (function () {
     dotMenuContainer.append(dotMenuIconImg);
 
     const para = document.createElement("p");
-    para.textContent = projectItemName;
+    para.textContent = project.name;
 
-    dotMenuIconImg.addEventListener("click", () => {
-      console.log(menuContainer);
-      dotMenuIconImg.insertAdjacentElement("afterEnd", menuContainer);
-      menuContainer.classList.toggle("show");
+    dotMenuIconImg.addEventListener("click", (e) => {
+      dotMenuIconImg.insertAdjacentElement("afterEnd", newMenuContainer);
+      newMenuContainer.classList.toggle("show");
     });
+
+    newMenuContainer.dataset.itemId = listItem.dataset.id;
 
     listItem.append(hashIconImg, para, dotMenuContainer);
     return listItem;
