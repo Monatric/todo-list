@@ -79,6 +79,10 @@ const menuContainer = (function () {
         return project.id === itemId;
       }).name = newProjectName;
 
+      const projectListItemLabel = document
+        .querySelector(`[data-id="${itemId}"]`)
+        .querySelector("p");
+      projectListItemLabel.textContent = newProjectName;
       localStorage.setItem("projectList", JSON.stringify(projectList));
       projectDialog.close();
       projectDialog.remove();
