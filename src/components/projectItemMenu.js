@@ -43,6 +43,28 @@ const menuContainer = (function () {
     document.body.append(dialog);
   };
 
+  const addSubmitEditForm = (projectDialog, projectForm, itemId) => {
+    projectForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const newProjectName = formData.get("project-name");
+      console.log(projectList);
+      projectList.projects.find((project) => {
+        return project.id === itemId;
+      }).name = newProjectName;
+      localStorage.setItem("projectList", JSON.stringify(projectList));
+      projectDialog.close();
+      projectDialog.remove();
+    });
+  };
+
+  const addCancelEditForm = (cancelBtn, projectDialog) => {
+    cancelBtn.addEventListener("click", () => {
+      projectDialog.close();
+      projectDialog.remove();
+    });
+  };
+
   const create = () => {
     const menuContainer = document.createElement("div");
     menuContainer.classList.add("project__menu");
@@ -61,6 +83,8 @@ const menuContainer = (function () {
     menuContainer.append(menuList);
 
     menuEdit.addEventListener("click", () => {
+      const itemId = menuContainer.dataset.itemId;
+
       createEditForm();
       const projectDialog = document.querySelector("#edit-project-dialog");
       const projectForm = document.querySelector("#edit-project-form");
@@ -77,31 +101,9 @@ const menuContainer = (function () {
 
       projectFormInput.value = project.name;
       menuContainer.classList.remove("show");
-      projectForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const projectDialog = document.querySelector("#edit-project-dialog");
-        const projectForm = document.querySelector("#edit-project-form");
-        const cancelBtn = document.querySelector(
-          "#edit-project-dialog .cancel-btn"
-        );
-        const projectFormInput = document.querySelector(
-          "#edit-project-form .dialog__input"
-        );
-        const formData = new FormData(event.target);
-        const newProjectName = formData.get("project-name");
-        projectList.projects.find((project) => {
-          return project.id === menuContainer.dataset.itemId;
-        }).name = newProjectName;
-        localStorage.setItem("projectList", JSON.stringify(projectList));
 
-        projectDialog.close();
-        projectDialog.remove();
-      });
-
-      cancelBtn.addEventListener("click", () => {
-        projectDialog.close();
-        projectDialog.remove();
-      });
+      addSubmitEditForm(projectDialog, projectForm, itemId);
+      addCancelEditForm(cancelBtn, projectDialog);
     });
 
     return menuContainer;
