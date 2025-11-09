@@ -28,7 +28,8 @@ const projectList = (function () {
   projectForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    const newProjectItem = projectItem.create(formData.get("project-name"));
+    const projectName = { name: formData.get("project-name") };
+    const newProjectItem = projectItem.create(projectName);
     const projectItemId = newProjectItem.dataset.id;
 
     projectList.projects.push({
