@@ -1,5 +1,5 @@
-const projectList = JSON.parse(localStorage.getItem("projectList"));
 const menuContainer = (function () {
+  const getProjectList = () => JSON.parse(localStorage.getItem("projectList"));
   const createEditForm = () => {
     const dialog = document.createElement("dialog");
     dialog.id = "edit-project-dialog";
@@ -45,6 +45,7 @@ const menuContainer = (function () {
 
   const showEditForm = (menuContainer) => {
     const itemId = menuContainer.dataset.itemId;
+    const projectList = getProjectList();
 
     createEditForm();
     const projectDialog = document.querySelector("#edit-project-dialog");
@@ -68,14 +69,16 @@ const menuContainer = (function () {
   };
 
   const addSubmitEditForm = (projectDialog, projectForm, itemId) => {
+    const projectList = getProjectList();
     projectForm.addEventListener("submit", (event) => {
       event.preventDefault();
       const formData = new FormData(event.target);
       const newProjectName = formData.get("project-name");
-      console.log(projectList);
+
       projectList.projects.find((project) => {
         return project.id === itemId;
       }).name = newProjectName;
+
       localStorage.setItem("projectList", JSON.stringify(projectList));
       projectDialog.close();
       projectDialog.remove();
