@@ -8,6 +8,3 @@ if (storageAvailable("localStorage")) {
 } else {
   console.log("No more localstorage");
 }
-
-// start behavior of projectList
-projectList();
