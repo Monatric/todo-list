@@ -100,6 +100,7 @@ const menuContainer = (function () {
 
       cancelBtn.addEventListener("click", () => {
         projectDialog.close();
+        projectDialog.remove();
       });
     });
 
