@@ -11,6 +11,7 @@ const menuContainer = (function () {
 
     const subTitle = document.createElement("h2");
     subTitle.classList.add("sub-title");
+    subTitle.textContent = "Edit Project";
 
     const projectNameInput = document.createElement("input");
     projectNameInput.type = "text";
@@ -28,10 +29,12 @@ const menuContainer = (function () {
     cancelBtn.formMethod = "dialog";
     cancelBtn.value = "Cancel";
     cancelBtn.type = "button";
+    cancelBtn.textContent = "Cancel";
 
     const editBtn = document.createElement("button");
     editBtn.classList.add("btn--primary");
     editBtn.id = "confirm-btn";
+    editBtn.textContent = "Edit";
 
     dialogBtns.append(cancelBtn, editBtn);
     form.append(subTitle, projectNameInput, dialogBtns);
