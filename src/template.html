@@ -131,8 +131,8 @@
       </div>
     </main>
     <!-- dialog for adding new project -->
-    <dialog id="project-dialog" class="dialog" closedby="any">
-      <form id="project-form">
+    <dialog id="add-project-dialog" class="dialog" closedby="any">
+      <form id="add-project-form">
         <h2 class="sub-title">Add Project</h2>
         <input
           type="text"
@@ -144,10 +144,9 @@
         />
         <div class="dialog__buttons">
           <button
-            class="btn--secondary"
+            class="btn--secondary cancel-btn"
             formmethod="dialog"
             value="Cancel"
-            id="cancel-btn"
             type="button"
           >
             Cancel
@@ -156,6 +155,31 @@
         </div>
       </form>
     </dialog>
+    <!-- dialog for editing project item -->
+    <!-- <dialog id="edit-project-dialog" class="dialog" closedby="any">
+      <form id="edit-project-form">
+        <h2 class="sub-title">Edit Project</h2>
+        <input
+          type="text"
+          class="dialog__input"
+          placeholder="Project Name"
+          name="project-name"
+          required
+          autofocus
+        />
+        <div class="dialog__buttons">
+          <button
+            class="btn--secondary cancel-btn"
+            formmethod="dialog"
+            value="Cancel"
+            type="button"
+          >
+            Cancel
+          </button>
+          <button class="btn--primary" id="confirm-btn">Edit</button>
+        </div>
+      </form>
+    </dialog> -->
     <h2 class="sub-title">test</h2>
     <h3 class="sub-heading">test</h3>
     <h4 class="sub-heading">test</h4>
