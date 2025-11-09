@@ -96,6 +96,24 @@ const menuContainer = (function () {
     });
   };
 
+  const showDelete = (menuContainer) => {
+    const projectList = getProjectList();
+    const itemId = menuContainer.dataset.itemId;
+    const project = projectList.projects.find((project) => {
+      return project.id === itemId;
+    });
+    const projectListItem = document.querySelector(`[data-id="${itemId}"]`);
+
+    let userConfirmation = confirm(
+      `Are you sure you want to delete ${project.name}?`
+    );
+    if (userConfirmation) {
+      projectListItem.remove();
+      projectList.projects.splice(projectList.projects.indexOf(project), 1);
+      localStorage.setItem("projectList", JSON.stringify(projectList));
+    }
+  };
+
   const create = () => {
     const menuContainer = document.createElement("div");
     menuContainer.classList.add("project__menu");
@@ -114,6 +132,7 @@ const menuContainer = (function () {
     menuContainer.append(menuList);
 
     menuEdit.addEventListener("click", () => showEditForm(menuContainer));
+    menuDelete.addEventListener("click", () => showDelete(menuContainer));
 
     return menuContainer;
   };
