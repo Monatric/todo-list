@@ -43,6 +43,30 @@ const menuContainer = (function () {
     document.body.append(dialog);
   };
 
+  const showEditForm = (menuContainer) => {
+    const itemId = menuContainer.dataset.itemId;
+
+    createEditForm();
+    const projectDialog = document.querySelector("#edit-project-dialog");
+    const projectForm = document.querySelector("#edit-project-form");
+    const cancelBtn = document.querySelector(
+      "#edit-project-dialog .cancel-btn"
+    );
+    const projectFormInput = document.querySelector(
+      "#edit-project-form .dialog__input"
+    );
+    projectDialog.showModal();
+    const project = projectList.projects.find((project) => {
+      return project.id === menuContainer.dataset.itemId;
+    });
+
+    projectFormInput.value = project.name;
+    menuContainer.classList.remove("show");
+
+    addSubmitEditForm(projectDialog, projectForm, itemId);
+    addCancelEditForm(cancelBtn, projectDialog);
+  };
+
   const addSubmitEditForm = (projectDialog, projectForm, itemId) => {
     projectForm.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -82,29 +106,7 @@ const menuContainer = (function () {
     menuList.append(menuEdit, menuDelete);
     menuContainer.append(menuList);
 
-    menuEdit.addEventListener("click", () => {
-      const itemId = menuContainer.dataset.itemId;
-
-      createEditForm();
-      const projectDialog = document.querySelector("#edit-project-dialog");
-      const projectForm = document.querySelector("#edit-project-form");
-      const cancelBtn = document.querySelector(
-        "#edit-project-dialog .cancel-btn"
-      );
-      const projectFormInput = document.querySelector(
-        "#edit-project-form .dialog__input"
-      );
-      projectDialog.showModal();
-      const project = projectList.projects.find((project) => {
-        return project.id === menuContainer.dataset.itemId;
-      });
-
-      projectFormInput.value = project.name;
-      menuContainer.classList.remove("show");
-
-      addSubmitEditForm(projectDialog, projectForm, itemId);
-      addCancelEditForm(cancelBtn, projectDialog);
-    });
+    menuEdit.addEventListener("click", () => showEditForm(menuContainer));
 
     return menuContainer;
   };
