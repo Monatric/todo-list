@@ -1,5 +1,5 @@
 import "./styles.css";
-import projectList from "./components/projectList.js";
+import projectList from "./pages/projectList.js";
 import storageAvailable from "./components/localStorageChecker.js";
 
 // Check for localStorage
