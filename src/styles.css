@@ -290,14 +290,14 @@ section.project {
   margin-bottom: 1rem;
 }
 
-.content .project__heading {
+#content .project__heading {
   display: flex;
   gap: 1rem;
   margin: 0.5rem 0;
   align-items: center;
 }
 
-.content .project .project__tasks {
+#content .project .project__tasks {
   padding: 0.5rem 1rem;
   display: flex;
   gap: 1rem;
@@ -306,13 +306,13 @@ section.project {
   border-radius: 8px;
 }
 
-.content .project .project__tasks:hover {
+#content .project .project__tasks:hover {
   background-color: var(--hover-item);
   border-radius: 8px;
   cursor: pointer;
 }
 
-.content .project .project__tasks.active {
+#content .project .project__tasks.active {
   background-color: var(--tertiary-bg);
 }
 
