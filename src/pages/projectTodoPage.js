@@ -1,4 +1,5 @@
 import { getProjectList } from "../reusables";
+import todoCard from "../components/todoCard";
 
 document.addEventListener("click", (e) => {
   if (e.target.matches(".nav__item.item")) {
@@ -15,6 +16,7 @@ const showProjectTodoPage = (id) => {
 
   mainContent.innerHTML = "";
   headerTitle.textContent = project.name;
+  mainContent.append(todoCard.create());
 
   // TODO: change the main content
   return;
