@@ -1,6 +1,5 @@
 import "./styles.css";
-import projectList from "./pages/projectList.js";
-import projectTodoPage from "./pages/projectTodoPage.js";
+import projectIndex from "./pages/projectIndex.js";
 import storageAvailable from "./components/localStorageChecker.js";
 
 // Check for localStorage
