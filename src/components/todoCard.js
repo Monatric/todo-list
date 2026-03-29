@@ -1,5 +1,6 @@
 import todoCheckList from "./todoCheckList";
 import { getProjectList } from "../reusables";
+import addTask from "./addTask";
 
 const todoCard = (function () {
   const create = () => {
@@ -9,14 +10,12 @@ const todoCard = (function () {
     const projectSection = document.createElement("section");
     projectSection.classList.add("project");
 
+    const addTaskBtn = addTask.create();
     card.append(projectSection);
-    projectSection.append(todoCheckList.create("test", "testtt"));
-    console.log(getProjectList());
+    projectSection.append(todoCheckList.create("test", "testtt"), addTaskBtn);
 
     return card;
   };
-
-  const addTask = () => {};
 
   return { create };
 })();
