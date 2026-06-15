@@ -72,38 +72,6 @@
             <img src="./icons/plus.svg" alt="Plus svg" class="svg" />
             <p class="sub-text">Add task</p>
           </div>
-          <div class="task__add_form">
-            <label for="task-title" class="sub-heading">Title</label>
-            <input
-              type="text"
-              class="dialog__input"
-              name="task-title"
-              required
-              autofocus
-            />
-            <label for="task-description" class="sub-text">Description</label>
-            <textarea
-              id="task-description"
-              name="task-description"
-              rows="10"
-              cols="50"
-            >
-            </textarea>
-            <div class="task__add_form_btns">
-              <input type="date" name="task-date" id="task-date" />
-              <select name="task-priority" id="task-priority">
-                <option value="" disabled selected hidden>
-                  Choose priority
-                </option>
-                <option value="high">High</option>
-                <option value="medium">Medium</option>
-                <option value="low">Low</option>
-              </select>
-              <button class="btn--primary">Cancel</button>
-              <button class="btn--secondary">Add</button>
-              <!-- TODO: make this template appear when add task is clicked -->
-            </div>
-          </div>
         </section>
         <section class="project">
           <div class="project__heading">
@@ -186,6 +154,48 @@
           <button class="btn--primary" id="confirm-btn">Add</button>
         </div>
       </form>
+    </dialog>
+
+    <!-- dialog for adding new task -->
+    <dialog id="add-task-dialog" class="dialog" closedby="any">
+      <div class="task__add_form">
+        <form id="add-task-form">
+          <label for="task-title" class="sub-heading">Title</label>
+          <input
+            type="text"
+            class="dialog__input"
+            name="task-title"
+            required
+            autofocus
+          />
+          <label for="task-description" class="sub-text">Description</label>
+          <textarea
+            id="task-description"
+            name="task-description"
+            rows="10"
+            cols="50"
+          >
+          </textarea>
+          <div class="task__add_form_btns">
+            <input type="date" name="task-date" id="task-date" />
+            <select name="task-priority" id="task-priority" required>
+              <option value="" disabled selected hidden>Choose priority</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+            <button
+              class="btn--secondary cancel-btn"
+              formmethod="dialog"
+              value="Cancel"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button class="btn--primary" id="add-btn">Add</button>
+          </div>
+        </form>
+      </div>
     </dialog>
     <!-- dialog for editing project item -->
     <!-- <dialog id="edit-project-dialog" class="dialog" closedby="any">
