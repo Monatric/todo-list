@@ -61,7 +61,3 @@ const showAddTaskDialog = (element, projectItem) => {
 };
 
 export default addTask;
-// <div class="task__add">
-//   <img src="./icons/plus.svg" alt="Plus svg" class="svg" />
-//   <p class="sub-text">Add task</p>
-// </div>
