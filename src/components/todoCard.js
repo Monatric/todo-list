@@ -13,6 +13,7 @@ const todoCard = (function () {
     const addTaskBtn = addTask.create(project);
     card.append(projectSection);
     projectSection.append(todoCheckList.create("test", "testtt"), addTaskBtn);
+    // TODO: make tasks appear in the card
 
     return card;
   };
