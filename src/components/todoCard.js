@@ -4,6 +4,7 @@ import addTask from "./addTask";
 
 const todoCard = (function () {
   const create = (project) => {
+    const taskList = project.tasks
     const card = document.createElement("div");
     card.classList.add("card");
 
@@ -12,7 +13,10 @@ const todoCard = (function () {
 
     const addTaskBtn = addTask.create(project);
     card.append(projectSection);
-    projectSection.append(todoCheckList.create("test", "testtt"), addTaskBtn);
+
+    taskList.forEach((task) => {
+      projectSection.append(todoCheckList.create(task.title, task.description), addTaskBtn);
+    })
     // TODO: make tasks appear in the card
 
     return card;
