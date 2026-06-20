@@ -14,10 +14,11 @@ const todoCard = (function () {
     const addTaskBtn = addTask.create(project);
     card.append(projectSection);
 
-    taskList.forEach((task) => {
-      projectSection.append(todoCheckList.create(task.title, task.description), addTaskBtn);
+    taskList?.forEach((task) => {
+      projectSection.append(todoCheckList.create(task.title, task.description));
     })
-    // TODO: make tasks appear in the card
+
+    projectSection.prepend(addTaskBtn)
 
     return card;
   };
