@@ -1,7 +1,8 @@
+import todoCheckList from "./todoCheckList";
 import plusSvg from "../icons/plus.svg";
 
 const addTask = (function () {
-  const create = (project) => {
+  const create = (project, projectSection) => {
     const addTaskDiv = document.createElement("div");
     addTaskDiv.classList.add("task__add");
 
@@ -14,7 +15,7 @@ const addTask = (function () {
     subText.classList.add("sub-text");
     subText.textContent = "Add task";
 
-    showAddTaskDialog(addTaskDiv, project);
+    showAddTaskDialog(addTaskDiv, project, projectSection);
 
     addTaskDiv.append(icon, subText);
 
@@ -29,6 +30,7 @@ const taskForm = document.querySelector("#add-task-dialog #add-task-form");
 const cancelBtn = document.querySelector("#add-task-dialog .cancel-btn");
 const addBtn = document.querySelector("#add-task-dialog #add-btn");
 let currentProject = null;
+let currentProjectSection = null;
 
 taskForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -48,14 +50,16 @@ taskForm.addEventListener("submit", (event) => {
     project.tasks.push(task);
     localStorage.setItem("projectList", JSON.stringify(projectList));
   }
+  currentProjectSection.append(todoCheckList.create(task.title, task.description))
   taskForm.reset();
 
   taskDialog.close();
 });
 
-const showAddTaskDialog = (element, projectItem) => {
+const showAddTaskDialog = (element, projectItem, projectSection) => {
   element.addEventListener("click", () => {
     currentProject = projectItem;
+    currentProjectSection = projectSection
     taskDialog.showModal();
   });
 

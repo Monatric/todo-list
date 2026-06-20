@@ -11,7 +11,7 @@ const todoCard = (function () {
     const projectSection = document.createElement("section");
     projectSection.classList.add("project");
 
-    const addTaskBtn = addTask.create(project);
+    const addTaskBtn = addTask.create(project, projectSection);
     card.append(projectSection);
 
     taskList?.forEach((task) => {
