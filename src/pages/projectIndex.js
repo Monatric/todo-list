@@ -14,7 +14,6 @@ document.addEventListener("click", (e) => {
     return;
   }
 
-  console.log(currentActiveSidebarBtn);
   if (currentActiveSidebarBtn) {
     currentActiveSidebarBtn.classList.remove("active");
   }
