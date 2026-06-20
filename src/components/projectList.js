@@ -9,13 +9,13 @@ const projectList = (function () {
   const navList = document.querySelector(".project__list .nav__list");
 
   // Set localStorage at the beginning
-  const projectList = localStorage.getItem("projectList")
-    ? JSON.parse(localStorage.getItem("projectList"))
-    : localStorage.setItem("projectList", JSON.stringify({ projects: [] }));
+  const projectsData = JSON.parse(localStorage.getItem("projectList")) ?? { projects: [] };
+
+  localStorage.setItem("projectList", JSON.stringify(projectsData));
 
   // Populate project lists if project names are available
-  if (projectList?.projects.length > 0) {
-    for (const project of projectList.projects) {
+  if (projectsData?.projects.length > 0) {
+    for (const project of projectsData.projects) {
       const newProjectItem = projectItem.create(project);
       navList.append(newProjectItem);
     }
@@ -32,12 +32,12 @@ const projectList = (function () {
     const newProjectItem = projectItem.create(projectName);
     const projectItemId = newProjectItem.dataset.id;
 
-    projectList.projects.push({
+    projectsData.projects.push({
       name: formData.get("project-name"),
       id: projectItemId,
     });
 
-    localStorage.setItem("projectList", JSON.stringify(projectList));
+    localStorage.setItem("projectList", JSON.stringify(projectsData));
 
     navList.append(newProjectItem);
     projectDialog.close();
