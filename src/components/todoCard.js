@@ -3,7 +3,16 @@ import { getProjectList } from "../reusables";
 import addTask from "./addTask";
 
 const todoCard = (function () {
-  const create = (project) => {
+  const create = (project, cardType) => {
+    const card = 
+      cardType === "tasks" ?
+      showTasks(project) :
+      null
+
+    return card;
+  };
+
+  const showTasks = (project) => {
     const taskList = project.tasks
     const card = document.createElement("div");
     card.classList.add("card");
