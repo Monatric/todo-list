@@ -4,16 +4,13 @@ import addTask from "./addTask";
 
 const todoCard = (function () {
   const create = (project, cardType) => {
-    const card = 
-      cardType === "tasks" ?
-      showTasks(project) :
-      null
+    const card = cardType === "tasks" ? showTasks(project) : null;
 
     return card;
   };
 
   const showTasks = (project) => {
-    const taskList = project.tasks
+    const taskList = project.tasks;
     const card = document.createElement("div");
     card.classList.add("card");
 
@@ -25,9 +22,9 @@ const todoCard = (function () {
 
     taskList?.forEach((task) => {
       projectSection.append(todoCheckList.create(task.title, task.description));
-    })
+    });
 
-    projectSection.prepend(addTaskBtn)
+    projectSection.prepend(addTaskBtn);
 
     return card;
   };
