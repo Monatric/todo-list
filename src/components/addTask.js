@@ -50,7 +50,9 @@ taskForm.addEventListener("submit", (event) => {
     project.tasks.push(task);
     localStorage.setItem("projectList", JSON.stringify(projectList));
   }
-  currentProjectSection.append(todoCheckList.create(task.title, task.description))
+  currentProjectSection.append(
+    todoCheckList.create(task.title, task.description),
+  );
   taskForm.reset();
 
   taskDialog.close();
@@ -59,7 +61,7 @@ taskForm.addEventListener("submit", (event) => {
 const showAddTaskDialog = (element, projectItem, projectSection) => {
   element.addEventListener("click", () => {
     currentProject = projectItem;
-    currentProjectSection = projectSection
+    currentProjectSection = projectSection;
     taskDialog.showModal();
   });
 

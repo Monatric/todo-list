@@ -9,7 +9,9 @@ const projectList = (function () {
   const navList = document.querySelector(".project__list .nav__list");
 
   // Set localStorage at the beginning
-  const projectsData = JSON.parse(localStorage.getItem("projectList")) ?? { projects: [] };
+  const projectsData = JSON.parse(localStorage.getItem("projectList")) ?? {
+    projects: [],
+  };
 
   localStorage.setItem("projectList", JSON.stringify(projectsData));
 

@@ -51,10 +51,10 @@ const menuContainer = (function () {
     const projectDialog = document.querySelector("#edit-project-dialog");
     const projectForm = document.querySelector("#edit-project-form");
     const cancelBtn = document.querySelector(
-      "#edit-project-dialog .cancel-btn"
+      "#edit-project-dialog .cancel-btn",
     );
     const projectFormInput = document.querySelector(
-      "#edit-project-form .dialog__input"
+      "#edit-project-form .dialog__input",
     );
     projectDialog.showModal();
     const project = projectList.projects.find((project) => {
@@ -105,7 +105,7 @@ const menuContainer = (function () {
     const projectListItem = document.querySelector(`[data-id="${itemId}"]`);
 
     let userConfirmation = confirm(
-      `Are you sure you want to delete ${project.name}?`
+      `Are you sure you want to delete ${project.name}?`,
     );
     if (userConfirmation) {
       projectListItem.remove();
