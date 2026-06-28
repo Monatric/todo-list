@@ -24,13 +24,20 @@ const todoCard = (function () {
     card.append(projectSection);
 
     taskList?.forEach((task) => {
-      projectSection.append(todoCheckList.create(task.title, task.description));
+      projectSection.append(todoCheckList.create(task.title, task.description, task.id));
     })
 
     projectSection.prepend(addTaskBtn)
 
     return card;
   };
+
+  const showDetails = (project) => {
+    const card = document.createElement("div");
+    card.classList.add("card", "hidden");
+
+    return card;
+  }
 
   return { create };
 })();
