@@ -1,7 +1,19 @@
+document.addEventListener("click", (e) => {
+  const allTaskItems = document.querySelectorAll(".project__task_item")
+  allTaskItems.forEach((item) => {
+    item.classList.remove("active")
+  })
+
+  const taskItem = document.querySelector(".project__task_item")
+  e.target.classList.add("active")
+  console.log(e.target.dataset.id)
+})
+
 const todoCheckList = (function () {
-  const create = (title, subText) => {
+  const create = (title, subText, id) => {
     const checkList = document.createElement("div");
     checkList.classList.add("project__task_item");
+    checkList.dataset.id = id
 
     const checkBox = document.createElement("input");
     checkBox.type = "checkbox";
