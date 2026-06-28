@@ -1,3 +1,13 @@
+document.addEventListener("click", (e) => {
+  const allTaskItems = document.querySelectorAll(".project__task_item")
+  allTaskItems.forEach((item) => {
+    item.classList.remove("active")
+  })
+
+  const taskItem = document.querySelector(".project__task_item")
+  e.target.classList.add("active")
+})
+
 const todoCheckList = (function () {
   const create = (title, subText) => {
     const checkList = document.createElement("div");
