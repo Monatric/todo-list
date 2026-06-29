@@ -1,12 +1,16 @@
 document.addEventListener("click", (e) => {
-  const allTaskItems = document.querySelectorAll(".project__task_item");
-  allTaskItems.forEach((item) => {
-    item.classList.remove("active");
-  });
+  const taskDetailsCard = document.querySelector("#task__details_card");
+  if (e.target.matches(".project__task_item")) {
+    const allTaskItems = document.querySelectorAll(".project__task_item");
+    allTaskItems.forEach((item) => {
+      item.classList.remove("active");
+    });
+
+    e.target.classList.add("active");
+    taskDetailsCard?.classList.remove("hidden");
+  }
 
   const taskItem = document.querySelector(".project__task_item");
-  e.target.classList.add("active");
-  console.log(e.target.dataset.id);
 });
 
 const todoCheckList = (function () {
@@ -14,12 +18,6 @@ const todoCheckList = (function () {
     const checkList = document.createElement("div");
     checkList.classList.add("project__task_item");
     checkList.dataset.id = id;
-    checkList.addEventListener("click", (e) => {
-      // change the technique
-      // create a hidden card during creation of card in todoCard
-      // use that hidden card's class to activate it and show
-      // the task's details
-    });
 
     const checkBox = document.createElement("input");
     checkBox.type = "checkbox";
