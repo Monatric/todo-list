@@ -4,7 +4,8 @@ import addTask from "./addTask";
 
 const todoCard = (function () {
   const create = (project, cardType) => {
-    const card = cardType === "tasks" ? showTasks(project) : null;
+    const card =
+      cardType === "tasks" ? showTasks(project) : showDetails(project);
 
     return card;
   };
@@ -13,6 +14,7 @@ const todoCard = (function () {
     const taskList = project.tasks;
     const card = document.createElement("div");
     card.classList.add("card");
+    card.id = "task__list_card";
 
     const projectSection = document.createElement("section");
     projectSection.classList.add("project");
@@ -34,6 +36,7 @@ const todoCard = (function () {
   const showDetails = (project) => {
     const card = document.createElement("div");
     card.classList.add("card", "hidden");
+    card.id = "task__details_card";
 
     return card;
   };
