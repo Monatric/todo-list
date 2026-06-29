@@ -39,7 +39,7 @@ taskForm.addEventListener("submit", (event) => {
     id: crypto.randomUUID(),
     title: formData.get("task-title"),
     description: formData.get("task-description"),
-    date: formData.get("task-date"),
+    dueDate: formData.get("task-due-date"),
     priority: formData.get("task-priority"),
   };
 
