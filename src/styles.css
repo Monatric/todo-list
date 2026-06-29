@@ -277,6 +277,10 @@ dialog form {
   display: block;
 }
 
+.hidden {
+  display: none;
+}
+
 /* main */
 
 main {
