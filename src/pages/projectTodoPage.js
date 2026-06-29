@@ -17,7 +17,7 @@ const showProjectTodoPage = (id) => {
   mainContent.innerHTML = "";
   headerTitle.textContent = project.name;
   mainContent.append(todoCard.create(project, "tasks"));
-  // mainContent.append(todoCard.create(project, "taskDetails"));
+  mainContent.append(todoCard.create(project, "taskDetails"));
   // TODO: change the main content
   return;
 };
