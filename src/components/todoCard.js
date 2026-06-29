@@ -3,10 +3,18 @@ import { getProjectList } from "../reusables";
 import addTask from "./addTask";
 
 const todoCard = (function () {
-  const create = (project) => {
+  const create = (project, cardType) => {
+    const card =
+      cardType === "tasks" ? showTasks(project) : showDetails(project);
+
+    return card;
+  };
+
+  const showTasks = (project) => {
     const taskList = project.tasks;
     const card = document.createElement("div");
     card.classList.add("card");
+    card.id = "task__list_card";
 
     const projectSection = document.createElement("section");
     projectSection.classList.add("project");
@@ -15,10 +23,20 @@ const todoCard = (function () {
     card.append(projectSection);
 
     taskList?.forEach((task) => {
-      projectSection.append(todoCheckList.create(task.title, task.description));
+      projectSection.append(
+        todoCheckList.create(task.title, task.description, task.id),
+      );
     });
 
     projectSection.prepend(addTaskBtn);
+
+    return card;
+  };
+
+  const showDetails = (project) => {
+    const card = document.createElement("div");
+    card.classList.add("card", "hidden");
+    card.id = "task__details_card";
 
     return card;
   };

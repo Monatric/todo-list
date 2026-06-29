@@ -1,7 +1,27 @@
+import todoDetails from "./todoDetails";
+import { findNestedTaskById } from "../reusables";
+
+document.addEventListener("click", (e) => {
+  const taskDetailsCard = document.querySelector("#task__details_card");
+  if (e.target.matches(".project__task_item")) {
+    const allTaskItems = document.querySelectorAll(".project__task_item");
+    allTaskItems.forEach((item) => {
+      item.classList.remove("active");
+    });
+
+    e.target.classList.add("active");
+    taskDetailsCard?.classList.remove("hidden");
+    todoDetails.create(e.target.dataset.id);
+  }
+
+  const taskItem = document.querySelector(".project__task_item");
+});
+
 const todoCheckList = (function () {
-  const create = (title, subText) => {
+  const create = (title, subText, id) => {
     const checkList = document.createElement("div");
     checkList.classList.add("project__task_item");
+    checkList.dataset.id = id;
 
     const checkBox = document.createElement("input");
     checkBox.type = "checkbox";

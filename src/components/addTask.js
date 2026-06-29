@@ -36,9 +36,10 @@ taskForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(event.target);
   const task = {
+    id: crypto.randomUUID(),
     title: formData.get("task-title"),
     description: formData.get("task-description"),
-    date: formData.get("task-date"),
+    dueDate: formData.get("task-due-date"),
     priority: formData.get("task-priority"),
   };
 
@@ -51,7 +52,7 @@ taskForm.addEventListener("submit", (event) => {
     localStorage.setItem("projectList", JSON.stringify(projectList));
   }
   currentProjectSection.append(
-    todoCheckList.create(task.title, task.description),
+    todoCheckList.create(task.title, task.description, task.id),
   );
   taskForm.reset();
 
