@@ -1,3 +1,6 @@
+import todoDetails from "./todoDetails";
+import { findNestedTaskById } from "../reusables";
+
 document.addEventListener("click", (e) => {
   const taskDetailsCard = document.querySelector("#task__details_card");
   if (e.target.matches(".project__task_item")) {
@@ -8,6 +11,7 @@ document.addEventListener("click", (e) => {
 
     e.target.classList.add("active");
     taskDetailsCard?.classList.remove("hidden");
+    todoDetails.create(e.target.dataset.id);
   }
 
   const taskItem = document.querySelector(".project__task_item");
