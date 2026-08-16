@@ -186,6 +186,47 @@
         </form>
       </div>
     </dialog>
+
+    <!-- dialog for editing task -->
+    <dialog id="edit-task-dialog" class="dialog" closedby="any">
+      <div class="task__edit_form">
+        <form id="edit-task-form">
+          <label for="task-title" class="sub-heading">Title</label>
+          <input
+            type="text"
+            class="dialog__input"
+            name="task-title"
+            required
+            autofocus
+          />
+          <label for="task-description" class="sub-text">Description</label>
+          <textarea
+            id="task-description"
+            name="task-description"
+            rows="10"
+            cols="50"
+          ></textarea>
+          <div class="task__edit_form_btns">
+            <input type="date" name="task-due-date" id="task-due-date" />
+            <select name="task-priority" id="task-priority" required>
+              <option value="" disabled selected hidden>Choose priority</option>
+              <option value="high">High</option>
+              <option value="medium" selected>Medium</option>
+              <option value="low">Low</option>
+            </select>
+            <button
+              class="btn--secondary cancel-btn"
+              formmethod="dialog"
+              value="Cancel"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button class="btn--primary" id="edit-btn">Edit</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
     <h2 class="sub-title">test</h2>
     <h3 class="sub-heading">test</h3>
     <h4 class="sub-heading">test</h4>

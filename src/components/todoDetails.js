@@ -1,4 +1,5 @@
 import { findNestedTaskById } from "../reusables";
+import editTask from "./editTask";
 
 const todoDetails = (function () {
   const create = (taskId) => {
@@ -44,6 +45,7 @@ const todoDetails = (function () {
     const editBtn = document.createElement("button")
     editBtn.classList.add("btn--primary")
     editBtn.textContent = "Edit"
+    editBtn.addEventListener("click", editTask.edit())
     
     const deleteBtn = document.createElement("button")
     deleteBtn.classList.add("btn--secondary")
