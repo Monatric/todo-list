@@ -32,10 +32,29 @@ const todoDetails = (function () {
 
     taskDetailsCard.append(detailsDiv);
     detailsDiv.append(taskSummary);
-    taskSummary.append(taskTitle, taskDescription, taskDueDate, taskPriority);
+
+    const btnGroup = addButtonGroup()
+    taskSummary.append(taskTitle, taskDescription, taskDueDate, taskPriority, btnGroup);
 
     return;
   };
+
+  const addButtonGroup = () => {
+    const container = document.createElement("div")
+    const editBtn = document.createElement("button")
+    editBtn.classList.add("btn--primary")
+    editBtn.textContent = "Edit"
+    
+    const deleteBtn = document.createElement("button")
+    deleteBtn.classList.add("btn--secondary")
+    deleteBtn.textContent = "Delete"
+
+    const breakLine = document.createElement("br")
+    const horizontalLine = document.createElement("hr")
+
+    container.append(breakLine, horizontalLine, editBtn, deleteBtn)
+    return container
+  }
 
   return { create };
 })();
