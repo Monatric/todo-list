@@ -9,9 +9,6 @@ const todoDetails = (function () {
     const detailsDiv = document.createElement("div");
     detailsDiv.classList.add("project__task_item");
 
-    const checkBox = document.createElement("input");
-    checkBox.type = "checkbox";
-
     const taskSummary = document.createElement("div");
     taskSummary.classList.add("project__task_summary");
 
@@ -34,7 +31,7 @@ const todoDetails = (function () {
     taskPriority.textContent = "Priority: " + task.priority;
 
     taskDetailsCard.append(detailsDiv);
-    detailsDiv.append(checkBox, taskSummary);
+    detailsDiv.append(taskSummary);
     taskSummary.append(taskTitle, taskDescription, taskDueDate, taskPriority);
 
     return;

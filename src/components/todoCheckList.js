@@ -45,5 +45,5 @@ const todoCheckList = (function () {
 
   return { create };
 })();
-//TODO: now add task details
+
 export default todoCheckList;
